@@ -376,4 +376,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initWorkCardsAndModal();
   initTestimonialsCarousel();
+  initBiotech();
 });
+
+
+/* ---------------------------------------------------- */
+/*                  BIOTECH PAGE LOGIC                  */
+/* ---------------------------------------------------- */
+
+function initBiotechHero() {
+  const slides = document.querySelectorAll('.bt-carousel-slide');
+  if (!slides.length) return;
+
+  let index = 0;
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 5000);
+}
+
+function initBiotechInfra() {
+  const infraItems = document.querySelectorAll('.bt-infra-item');
+  const infraSection = document.querySelector('.bt-infra-section');
+  if (!infraItems.length || !infraSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      infraItems.forEach((item, idx) => {
+        setTimeout(() => {
+          item.classList.add('animate');
+        }, idx * 150);
+      });
+      observer.unobserve(infraSection);
+    }
+  }, { threshold: 0.2 });
+
+  observer.observe(infraSection);
+}
+
+function initBiotechReveal() {
+  const reveals = document.querySelectorAll('.bt-reveal');
+  if (!reveals.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+}
+
+function initBiotech() {
+  if (document.body.classList.contains('bt-body')) {
+    initBiotechHero();
+    initBiotechInfra();
+    initBiotechReveal();
+  }
+}
+
