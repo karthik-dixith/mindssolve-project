@@ -1135,31 +1135,63 @@ body.dark-mode .contact-form textarea {
 .bt-infra-list {
   list-style: none;
   margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .bt-infra-item {
-  padding: 15px 0;
-  border-bottom: 1px solid var(--border-color);
+  padding: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 15px;
   opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.5s ease;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.bt-infra-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--bt-teal);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bt-infra-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.15);
+}
+
+.bt-infra-item:hover::before {
+  opacity: 1;
 }
 
 .bt-infra-item.animate {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .bt-infra-item {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-color);
 }
 
 .bt-infra-item i {
   color: var(--bt-teal);
+  font-size: 1.2rem;
 }
 
 .bt-infra-map {
@@ -1298,3 +1330,152 @@ body.dark-mode .contact-form textarea {
   }
 }
 
+
+/* Regional Profiles Tabs */
+.bt-tabs-section {
+  padding: 80px 0;
+  background: var(--section-bg-alt);
+}
+
+.bt-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.bt-tab-btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: none;
+  background: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.bt-tab-btn.active,
+.bt-tab-btn:hover {
+  background: var(--bt-teal);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.2);
+}
+
+.bt-tab-panel {
+  display: none;
+  animation: fadeUp 0.6s ease;
+}
+
+.bt-tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bt-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.bt-profile-visual {
+  height: 400px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.bt-profile-content h3 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--text-color);
+}
+
+.bt-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bt-check-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.bt-check-item:hover {
+  transform: translateX(10px);
+  background: #f0fdfa; /* light teal tint */
+}
+
+.bt-check-item i {
+  color: var(--bt-teal);
+  font-size: 1.2rem;
+}
+
+/* Enhanced Units Carousel */
+.bt-units-track:hover {
+  animation-play-state: paused;
+}
+
+.bt-unit-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  padding: 0; /* remove padding to let image fill */
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-unit-img {
+  height: 220px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.bt-unit-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.bt-unit-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: var(--card-bg);
+}
+
+.bt-unit-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  .bt-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}

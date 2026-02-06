@@ -24,7 +24,7 @@
     <section class="bt-hero">
         <div class="bt-carousel-slide active">
             <div class="bt-slide-bg"
-                style="background-image: linear-gradient(rgba(13, 148, 136, 0.2), rgba(15, 23, 42, 0.4)), url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80');">
+                style="background-image: linear-gradient(rgba(13, 148, 136, 0.2), rgba(15, 23, 42, 0.4)), url('assets/biotech/hero/traditional-medicine.jpg');">
             </div>
             <div class="bt-slide-content">
                 <h1>Traditional Medicine</h1>
@@ -34,7 +34,7 @@
 
         <div class="bt-carousel-slide">
             <div class="bt-slide-bg"
-                style="background-image: linear-gradient(rgba(14, 165, 233, 0.2), rgba(15, 23, 42, 0.4)), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80');">
+                style="background-image: linear-gradient(rgba(14, 165, 233, 0.2), rgba(15, 23, 42, 0.4)), url('assets/biotech/hero/moringa-oil.jpg');">
             </div>
             <div class="bt-slide-content">
                 <h1>Moringa Oil (Ben Oil)</h1>
@@ -45,7 +45,7 @@
 
         <div class="bt-carousel-slide">
             <div class="bt-slide-bg"
-                style="background-image: linear-gradient(rgba(34, 197, 94, 0.2), rgba(15, 23, 42, 0.4)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80');">
+                style="background-image: linear-gradient(rgba(34, 197, 94, 0.2), rgba(15, 23, 42, 0.4)), url('assets/biotech/hero/biotech-lab.jpg');">
             </div>
             <div class="bt-slide-content">
                 <h1>From Tradition to Industry</h1>
@@ -69,7 +69,7 @@
             <div class="bt-grid">
                 <div class="bt-card bt-reveal">
                     <div class="bt-card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&q=80');">
+                        style="background-image: url('assets/biotech/insights/medical-moringa.jpg');">
                     </div>
                     <div class="bt-card-content">
                         <h3>Modern Medical Moringa</h3>
@@ -77,8 +77,7 @@
                 </div>
 
                 <div class="bt-card bt-reveal" style="transition-delay: 0.1s;">
-                    <div class="bt-card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80');">
+                    <div class="bt-card-bg" style="background-image: url('assets/biotech/insights/food-source.jpg');">
                     </div>
                     <div class="bt-card-content">
                         <h3>An Abundant Source of Food</h3>
@@ -86,8 +85,7 @@
                 </div>
 
                 <div class="bt-card bt-reveal" style="transition-delay: 0.2s;">
-                    <div class="bt-card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80');">
+                    <div class="bt-card-bg" style="background-image: url('assets/biotech/insights/agriculture.jpg');">
                     </div>
                     <div class="bt-card-content">
                         <h3>Agricultural Applications</h3>
@@ -113,7 +111,14 @@
                         <li class="bt-infra-item"><i class="fa-solid fa-industry"></i> ETP</li>
                         <li class="bt-infra-item"><i class="fa-solid fa-water-ladder"></i> Drainage</li>
                         <li class="bt-infra-item"><i class="fa-solid fa-fire-extinguisher"></i> Fire Fighting</li>
-                        <li class="bt-infra-item"><i class="fa-solid fa-shield-halved"></i> Centralized Security</li>
+                        <li class="bt-infra-item"><i class="fa-solid fa-shield-halved"></i> Security</li>
+                        <!-- New items -->
+                        <li class="bt-infra-item"><i class="fa-solid fa-fire-burner"></i> Boilers</li>
+                        <li class="bt-infra-item"><i class="fa-solid fa-road"></i> Road Network</li>
+                        <li class="bt-infra-item"><i class="fa-solid fa-cloud-showers-water"></i> Rain Water Harvesting
+                        </li>
+                        <li class="bt-infra-item"><i class="fa-solid fa-square-parking"></i> Parking Terminal</li>
+                        <li class="bt-infra-item"><i class="fa-solid fa-utensils"></i> Canteen & Guest House</li>
                     </ul>
                 </div>
 
@@ -123,6 +128,111 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- New Section: Regional Profiles Tabs -->
+    <section class="bt-tabs-section">
+        <div class="container">
+            <span class="bt-section-label">Regional Profile</span>
+            <h2 class="section-title bt-reveal">Holistic Ecosystem</h2>
+
+            <div class="bt-tabs-nav bt-reveal">
+                <button class="bt-tab-btn active" onclick="switchTab('agri')">Agriculture Profile</button>
+                <button class="bt-tab-btn" onclick="switchTab('industry')">Industries Profile</button>
+                <button class="bt-tab-btn" onclick="switchTab('student')">Student Corner</button>
+            </div>
+
+            <!-- Tab 1: Agriculture -->
+            <div id="agri" class="bt-tab-panel active">
+                <div class="bt-profile-grid">
+                    <div class="bt-profile-visual"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('assets/biotech/profiles/agriculture-profile.jpg');">
+                    </div>
+                    <div class="bt-profile-content">
+                        <h3>Biotech Agriculture</h3>
+                        <div class="bt-check-list">
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-wheat-awn"></i>
+                                <span><strong>Major Crops:</strong> Sorghum, Paddy, Pulses, Sunflower</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                                <span><strong>Commercial:</strong> Cotton, Sugarcane, Medicinal Plants</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-cow"></i>
+                                <span><strong>Livestock:</strong> Cattle, Poultry, Sheep, Buffaloes</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-mound"></i>
+                                <span><strong>Soil Types:</strong> Black Cotton Soil, Laterite Soil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Industry -->
+            <div id="industry" class="bt-tab-panel">
+                <div class="bt-profile-grid">
+                    <div class="bt-profile-visual"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('assets/biotech/profiles/industry-profile.jpg');">
+                    </div>
+                    <div class="bt-profile-content">
+                        <h3>Industrial Potential</h3>
+                        <div class="bt-check-list">
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-industry"></i>
+                                <span><strong>Sectors:</strong> Agro Processing, Thermal Energy, Pharma</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-shirt"></i>
+                                <span><strong>Textile:</strong> RMG Industries, Cotton Processing</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-gem"></i>
+                                <span><strong>Minerals:</strong> Copper, Gold, Uranium, Limestone</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-cubes"></i>
+                                <span><strong>Resources:</strong> Building Stone, Quartz, Feldspar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Student -->
+            <div id="student" class="bt-tab-panel">
+                <div class="bt-profile-grid">
+                    <div class="bt-profile-visual"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('assets/biotech/profiles/student-corner.jpg');">
+                    </div>
+                    <div class="bt-profile-content">
+                        <h3>Student Corner for Innovation</h3>
+                        <div class="bt-check-list">
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Platform for innovative ideas & opportunities</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-microscope"></i>
+                                <span>Agri-tech incubation centre for student projects</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-rocket"></i>
+                                <span>Startup introduction & mentorship</span>
+                            </div>
+                            <div class="bt-check-item">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                                <span>Training programs & workshops for farmers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -161,42 +271,90 @@
 
             <div class="bt-units-carousel bt-reveal" style="margin-top: 50px;">
                 <div class="bt-units-track">
+                    <!-- Original Items with Images -->
                     <div class="bt-unit-card">
-                        <h4>Moringa dehydration unit</h4>
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/dehydration.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa dehydration unit</h4>
+                        </div>
                     </div>
                     <div class="bt-unit-card">
-                        <h4>Moringa pulverization unit</h4>
+                        <div class="bt-unit-img"
+                            style="background-image: url('assets/biotech/units/pulverization.jpg');"></div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa pulverization unit</h4>
+                        </div>
                     </div>
                     <div class="bt-unit-card">
-                        <h4>Moringa refinery unit</h4>
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/refinery.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa refinery unit</h4>
+                        </div>
                     </div>
                     <div class="bt-unit-card">
-                        <h4>Moringa oil extraction unit</h4>
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/extraction.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa oil extraction unit</h4>
+                        </div>
                     </div>
                     <div class="bt-unit-card">
-                        <h4>Moringa capsule unit</h4>
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/capsule.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa capsule unit</h4>
+                        </div>
                     </div>
                     <div class="bt-unit-card">
-                        <h4>Vermi compost unit</h4>
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/vermi.jpg');"></div>
+                        <div class="bt-unit-info">
+                            <h4>Vermi compost unit</h4>
+                        </div>
                     </div>
-                    <!-- duplicate for infinite loop -->
+
+                    <!-- Duplicates for infinite loop -->
                     <div class="bt-unit-card">
-                        <h4>Moringa dehydration unit</h4>
-                    </div>
-                    <div class="bt-unit-card">
-                        <h4>Moringa pulverization unit</h4>
-                    </div>
-                    <div class="bt-unit-card">
-                        <h4>Moringa refinery unit</h4>
-                    </div>
-                    <div class="bt-unit-card">
-                        <h4>Moringa oil extraction unit</h4>
-                    </div>
-                    <div class="bt-unit-card">
-                        <h4>Moringa capsule unit</h4>
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/dehydration.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa dehydration unit</h4>
+                        </div>
                     </div>
                     <div class="bt-unit-card">
-                        <h4>Vermi compost unit</h4>
+                        <div class="bt-unit-img"
+                            style="background-image: url('assets/biotech/units/pulverization.jpg');"></div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa pulverization unit</h4>
+                        </div>
+                    </div>
+                    <div class="bt-unit-card">
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/refinery.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa refinery unit</h4>
+                        </div>
+                    </div>
+                    <div class="bt-unit-card">
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/extraction.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa oil extraction unit</h4>
+                        </div>
+                    </div>
+                    <div class="bt-unit-card">
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/capsule.jpg');">
+                        </div>
+                        <div class="bt-unit-info">
+                            <h4>Moringa capsule unit</h4>
+                        </div>
+                    </div>
+                    <div class="bt-unit-card">
+                        <div class="bt-unit-img" style="background-image: url('assets/biotech/units/vermi.jpg');"></div>
+                        <div class="bt-unit-info">
+                            <h4>Vermi compost unit</h4>
+                        </div>
                     </div>
                 </div>
             </div>

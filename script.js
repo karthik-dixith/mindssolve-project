@@ -430,11 +430,109 @@ function initBiotechReveal() {
   reveals.forEach(el => observer.observe(el));
 }
 
+
+function switchTab(tabId) {
+  // 1. remove active from all buttons
+  const buttons = document.querySelectorAll('.bt-tab-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  // 2. remove active from all panels
+  const panels = document.querySelectorAll('.bt-tab-panel');
+  panels.forEach(panel => panel.classList.remove('active'));
+
+  // 3. activate correct button
+  // (find button that targets this tabId ... or just event target if passed)
+  // simplest way since i used inline onclick: find the button that was clicked
+  // actually, let's just loop and check text or attribute. 
+  // BETTER: logic assumes the onclick passes the ID.
+  // To highlight the button, I can use the event object or querySelector based on logic.
+  // Since I don't pass 'this', I'll just find the button that calls this ID? 
+  // No, that's messy. Let's update the HTML to pass 'this' or use event listeners.
+  // But since I already wrote HTML with onclick="switchTab('id')", 
+  // I will rely on the fact that I can't easily get 'this' without passing it.
+  
+  // FIX: let's rewriting the HTML is expensive. 
+  // Let's just use event delegation or querySelector to map buttons to IDs if possible.
+  // Or, I can re-select the button based on the index? 
+  // No.
+  
+  // SIMPLEST FIX: iterate buttons, see which one matches the intended logic?
+  // Actually, I'll essentially re-implement the click handler in JS to be safe 
+  // and remove the inline handlers if I could, but I already wrote them.
+  
+  // Alternative: passed argument is just ID.
+  // I will assume the buttons are in order: Agri, Industry, Student.
+  // And IDs are: agri, industry, student.
+  
+  // Let's try to match by some attribute or just pass 'event' in the HTML? I didn't.
+  
+  // OK, I will use a different approach. I will attach event listeners in initBiotechTabs
+  // and ignore the inline onclicks (or remove them? no, they might error if function missing).
+  // I MUST define the function `switchTab`.
+  
+  // To find the active button:
+  const targetBtn = Array.from(buttons).find(btn => 
+    btn.textContent.toLowerCase().includes(tabId === 'agri' ? 'agriculture' : 
+                                           tabId === 'industry' ? 'indus' : 'student')
+  );
+  
+  if (targetBtn) targetBtn.classList.add('active');
+  
+  // 4. activate panel
+  const targetPanel = document.getElementById(tabId);
+  if (targetPanel) targetPanel.classList.add('active');
+}
+
+// better: attach listeners cleanly in JS and remove inline from HTML if I could, 
+// but I'll stick to the function for now. 
+// actually, let's make it robust.
+
+function initBiotechTabs() {
+  const buttons = document.querySelectorAll('.bt-tab-btn');
+  const panels = document.querySelectorAll('.bt-tab-panel');
+  
+  if (!buttons.length || !panels.length) return;
+
+  buttons.forEach(btn => {
+    btn.onclick = function() { // override inline if any, or just handle click
+       // get target from... text? or data attribute? 
+       // i didn't add data attribute.
+       // let's rely on the inline onclick that calls switchTab
+       // but wait, I can just modify switchTab to handle the UI update
+    };
+    
+    // Actually, I will just redefine the onclick behavior here cleanly 
+    // and rely on the text or index to map to panels.
+  });
+}
+// wait, I will implement switchTab globally
+window.switchTab = function(tabId) {
+   const allBtns = document.querySelectorAll('.bt-tab-btn');
+   const allPanels = document.querySelectorAll('.bt-tab-panel');
+   
+   allBtns.forEach(b => b.classList.remove('active'));
+   allPanels.forEach(p => p.classList.remove('active'));
+   
+   const targetPanel = document.getElementById(tabId);
+   if (targetPanel) targetPanel.classList.add('active');
+   
+   // Highlight button
+   // Helper to map id to button index
+   let index = 0;
+   if(tabId === 'industry') index = 1;
+   if(tabId === 'student') index = 2;
+   
+   if(allBtns[index]) allBtns[index].classList.add('active');
+}
+
 function initBiotech() {
   if (document.body.classList.contains('bt-body')) {
     initBiotechHero();
     initBiotechInfra();
     initBiotechReveal();
+    // Tabs are auto-handled by window.switchTab but let's init default state if needed?
+    // default active is already in HTML.
   }
 }
+
 
