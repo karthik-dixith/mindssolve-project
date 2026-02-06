@@ -322,8 +322,51 @@ function initTestimonialsCarousel() {
 }
 
 
+// ----------------------------------------------------
+// theme toggle (light / dark mode)
+// ----------------------------------------------------
+function initThemeToggle() {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
+
+  const icon = toggleBtn.querySelector("i");
+  const body = document.body;
+
+  // 1. check for saved preference
+  const savedTheme = localStorage.getItem("theme");
+
+  // 2. check for system preference
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function setTheme(theme) {
+    if (theme === "dark") {
+      body.classList.add("dark-mode");
+      icon.classList.replace("fa-moon", "fa-sun");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark-mode");
+      icon.classList.replace("fa-sun", "fa-moon");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // initial load
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else if (systemPrefersDark.matches) {
+    setTheme("dark");
+  }
+
+  // toggle click
+  toggleBtn.addEventListener("click", () => {
+    const isDark = body.classList.contains("dark-mode");
+    setTheme(isDark ? "light" : "dark");
+  });
+}
+
 // run everything after the page loads
 document.addEventListener("DOMContentLoaded", function () {
+  initThemeToggle();
   initSlider("itSlider");
   initSlider("btSlider");
 
