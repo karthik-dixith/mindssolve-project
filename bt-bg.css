@@ -1,0 +1,198 @@
+/* =========================================
+   FAKE 3D BACKGROUND - BIOTECH SECTION
+   ========================================= */
+
+/* 
+   Container: Fixed behind everything 
+   z-index: -1 ensures it stays behind content
+*/
+#bt-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    overflow: hidden;
+    background: #f0fdfa;
+    /* Fallback light teal background */
+    pointer-events: none;
+    /* Click-through enabled */
+    /* Base subtle gradient */
+    background: linear-gradient(to bottom, #f0fdfa 0%, #fff 100%);
+}
+
+/* =========================================
+   LAYER 1: Gradient Mesh (Base Movement)
+   ========================================= */
+.bt-bg-layer-1 {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.06) 0%, transparent 45%);
+    filter: blur(60px);
+    animation: float-mesh 25s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes float-mesh {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-5%, 2%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(2%, -5%) scale(1.05);
+    }
+}
+
+/* =========================================
+   LAYER 2: Noise Texture (Depth & Grain)
+   ========================================= */
+.bt-bg-layer-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    /* Very subtle */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    animation: drift-noise 60s linear infinite;
+}
+
+@keyframes drift-noise {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+/* =========================================
+   LAYER 3: Abstract Shapes (Frontend Parallax)
+   ========================================= */
+.bt-bg-layer-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Shapes */
+.bt-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(13, 148, 136, 0));
+    filter: blur(8px);
+    animation: float-shapes 15s ease-in-out infinite;
+}
+
+.bt-shape-1 {
+    top: 20%;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.bt-shape-2 {
+    bottom: 15%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(14, 165, 233, 0));
+    animation-delay: -5s;
+    animation-duration: 22s;
+}
+
+.bt-shape-3 {
+    top: 40%;
+    right: 30%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0));
+    animation-delay: -2s;
+    animation-duration: 20s;
+}
+
+@keyframes float-shapes {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-40px) scale(1.05) rotate(5deg);
+    }
+
+    66% {
+        transform: translateY(20px) scale(0.95) rotate(-3deg);
+    }
+
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+/* =========================================
+   OVERRIDES: Make specific sections transparent
+   so the background shows through
+   ========================================= */
+
+/* Override gradients and colors from styles.css */
+.bt-insight-section,
+.bt-infra-section,
+.bt-tabs-section,
+.bt-crops-section,
+.bt-units-section {
+    background: transparent !important;
+}
+
+/* Ensure darker cards stay opaque for text readability */
+.bt-card,
+.bt-infra-item,
+.bt-crop-item,
+.bt-unit-card,
+.bt-profile-grid .bt-profile-content,
+/* Profile text container usually transparent, careful here */
+.bt-check-item,
+.bt-tab-btn {
+    backdrop-filter: blur(10px);
+    /* Glassmorphism touch */
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly translucent */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Dark mode support if applicable */
+body.dark-mode #bt-background-container {
+    background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+}
+
+body.dark-mode .bt-bg-layer-1 {
+    opacity: 0.4;
+}
+
+body.dark-mode .bt-bg-layer-2 {
+    opacity: 0.05;
+}
+
+body.dark-mode .bt-card,
+body.dark-mode .bt-infra-item,
+body.dark-mode .bt-crop-item,
+body.dark-mode .bt-unit-card,
+body.dark-mode .bt-check-item,
+body.dark-mode .bt-tab-btn {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+}

@@ -981,6 +981,7 @@ body.dark-mode .contact-form textarea {
 .theme-toggle i {
   pointer-events: none;
 }
+
 /* ---------------------------------------------------- */
 /*                    BIOTECH PAGE                      */
 /* ---------------------------------------------------- */
@@ -1151,7 +1152,7 @@ body.dark-mode .contact-form textarea {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.4s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -1266,8 +1267,13 @@ body.dark-mode .contact-form textarea {
 }
 
 @keyframes bt-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-300px * 6 - 30px * 6)); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-300px * 6 - 30px * 6));
+  }
 }
 
 .bt-unit-card {
@@ -1355,7 +1361,7 @@ body.dark-mode .contact-form textarea {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .bt-tab-btn.active,
@@ -1376,8 +1382,15 @@ body.dark-mode .contact-form textarea {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .bt-profile-grid {
@@ -1394,7 +1407,7 @@ body.dark-mode .contact-form textarea {
   background-position: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
 .bt-profile-content h3 {
@@ -1417,12 +1430,13 @@ body.dark-mode .contact-form textarea {
   background: var(--card-bg);
   border-radius: 12px;
   transition: transform 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
 .bt-check-item:hover {
   transform: translateX(10px);
-  background: #f0fdfa; /* light teal tint */
+  background: #f0fdfa;
+  /* light teal tint */
 }
 
 .bt-check-item i {
@@ -1438,7 +1452,8 @@ body.dark-mode .contact-form textarea {
 .bt-unit-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  padding: 0; /* remove padding to let image fill */
+  padding: 0;
+  /* remove padding to let image fill */
   height: 320px;
   display: flex;
   flex-direction: column;
@@ -1456,7 +1471,7 @@ body.dark-mode .contact-form textarea {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
 }
 
 .bt-unit-info {
@@ -1470,7 +1485,7 @@ body.dark-mode .contact-form textarea {
 
 .bt-unit-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   z-index: 10;
 }
 
