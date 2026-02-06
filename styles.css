@@ -109,26 +109,24 @@ section {
   z-index: 1000;
 
   height: var(--nav-h);
-  background: var(--nav-bg);
-  border-bottom: 1px solid var(--border-color);
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
-  transition: var(--theme-transition);
+  justify-content: space-between;
+
+  padding: 10px 26px;
+
+  /* glass look (works in both themes because base colors are vars) */
+  background: color-mix(in srgb, var(--nav-bg) 78%, transparent);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--theme-transition), box-shadow 200ms ease;
 }
 
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
-  transition: var(--theme-transition);
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
+/* shadow only after i start scrolling */
+.navbar.scrolled {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  background: color-mix(in srgb, var(--nav-bg) 90%, transparent);
 }
 
 /* logo sizing */
@@ -138,9 +136,203 @@ section {
   display: block;
 }
 
-.logo img:hover {
-  opacity: 0.85;
+/* desktop links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+/* each link */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 650;
+  font-size: 15px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  transition: var(--theme-transition), background 160ms ease, transform 160ms ease;
+}
+
+/* pill highlight on hover */
+.nav-link:hover {
+  background: rgba(37, 99, 235, 0.12);
+  transform: translateY(-1px);
+}
+
+/* active section highlight */
+.nav-link.active {
+  background: color-mix(in srgb, var(--text-color) 10%, transparent);
+}
+
+/* underline animation for nav links */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 7px;
+  height: 2px;
+  border-radius: 999px;
+
+  background: rgba(37, 99, 235, 0.65);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* keep underline visible for active section */
+.nav-link.active::after {
+  transform: scaleX(1);
+  background: color-mix(in srgb, var(--text-color) 45%, transparent);
+}
+
+/* keyboard focus */
+.nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+  background: rgba(37, 99, 235, 0.12);
+}
+
+/* ---------------- contact CTA ---------------- */
+.nav-cta {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff !important;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+.nav-cta:visited {
+  color: #fff !important;
+}
+
+.nav-cta:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.nav-cta:active {
+  background: linear-gradient(135deg, #1e3a8a, #172554);
+  color: #fff !important;
+}
+
+.nav-cta.active {
+  background: linear-gradient(135deg, #1e40af, #172554);
+  color: #fff !important;
+}
+
+.nav-cta:focus-visible {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.45);
+}
+
+.nav-cta::after {
+  content: none;
+}
+
+/* ---------------- hamburger button ---------------- */
+.nav-toggle {
+  display: none; /* only on mobile */
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: color-mix(in srgb, var(--text-color) 8%, transparent);
+
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+
+  transition: var(--theme-transition);
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 999px;
+  background: var(--text-color);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+/* animate hamburger into X */
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------------- mobile menu ---------------- */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 2000;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-panel {
+  position: absolute;
+  top: calc(var(--nav-h) + 12px);
+  right: 16px;
+  left: 16px;
+
+  background: color-mix(in srgb, var(--nav-bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  padding: 14px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--border-color);
+
+  transform: translateY(-10px);
+  transition: transform 180ms ease, var(--theme-transition);
+}
+
+.mobile-nav.open .mobile-nav-panel {
+  transform: translateY(0);
+}
+
+.mobile-nav-panel .nav-link {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+/* ---------------- responsive ---------------- */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+}
+
 
 /* ---------------- common headings ---------------- */
 .section-title {
@@ -759,7 +951,6 @@ body.dark-mode .contact-form textarea {
     width: 100%;
   }
 }
-
 
 
 /* ---------------- modal (for work projects) ---------------- */

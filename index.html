@@ -1,357 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minds Solvit Pvt Ltd</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minds Solvit Pvt Ltd</title>
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!-- icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- my css -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-  <!-- my css -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <!-- sticky navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <!-- logo goes back to home -->
-      <a href="index.html">
-        <img src="Mindsolve_logo.jpeg" alt="Minds Solvit Logo" />
-      </a>
-    </div>
-
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#work">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- hero split (IT + BT) -->
-  <section class="hero" id="home">
-    <!-- IT side -->
-    <div class="hero-it">
-      <div class="hero-content">
-        <h1>
-          <i class="fa-solid fa-laptop-code"></i>
-          Innovative IT Solutions
-        </h1>
-
-        <!-- IT slider -->
-        <div class="slider" id="itSlider">
-          <p class="slide active">Secure, scalable digital systems.</p>
-          <p class="slide">Connecting ideas to the digital world.</p>
-          <p class="slide">Cloud-ready, future-proof solutions.</p>
-          <p class="slide">Security-first engineering &amp; support.</p>
-        </div>
+  <body>
+    <!-- navbar -->
+    <header class="navbar" id="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Mindsolve_logo.jpeg" alt="Minds Solvit Logo" />
+        </a>
       </div>
 
-      <!-- IT button strip -->
-      <div class="hero-action">
-        <a href="it.html" class="btn btn-light">Explore IT</a>
-      </div>
-    </div>
+      <!-- desktop menu -->
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#work" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link nav-cta">Contact</a>
+      </nav>
 
-    <!-- BT side -->
-    <div class="hero-bt">
-      <div class="hero-content">
-        <h1>
-          <i class="fa-solid fa-dna"></i>
-          Bio Technology
-        </h1>
-
-        <!-- BT slider -->
-        <div class="slider" id="btSlider">
-          <p class="slide active">Technology aligned with sustainable strategy.</p>
-          <p class="slide">Traditional medicine backed by research.</p>
-          <p class="slide">Healthcare innovation for better outcomes.</p>
-          <p class="slide">Quality, safety &amp; scalable production.</p>
-        </div>
-      </div>
-
-      <!-- BT button strip -->
-      <div class="hero-action">
-        <a href="bt.html" class="btn btn-dark">Explore BT</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- one partner section -->
-  <section class="bridge reveal" id="bridge">
-    <div class="container">
-      <h2 class="section-title parallax p1">One Partner. Two Strengths.</h2>
-      <p class="section-subtitle parallax p2">
-        We combine IT expertise with Bio Technology to deliver innovative, sustainable,
-        and scalable business value.
-      </p>
-    </div>
-  </section>
-
-  <!-- about section -->
-  <section class="about section reveal" id="about">
-    <div class="container">
-      <h2 class="section-title parallax p1">About Minds Solvit</h2>
-
-      <p class="about-text parallax p2">
-        We build modern, scalable, and business-driven digital solutions. Our focus is
-        premium design, performance, and long-term value.
-      </p>
-
-      <!-- counters -->
-      <div class="stats parallax p3">
-        <div class="stat">
-          <div class="stat-number" data-target="10">0</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number" data-target="150">0</div>
-          <div class="stat-label">Projects Delivered</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number" data-target="100" data-suffix="%">0</div>
-          <div class="stat-label">Client Satisfaction</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- services section -->
-  <section class="services-section section reveal" id="services">
-    <div class="container services-wrap">
-      <h2 class="section-title parallax p1">Our Services</h2>
-
-      <p class="services-subtitle parallax p2">
-        We provide end-to-end digital solutions designed to scale your business with modern
-        technology and premium design.
-      </p>
-
-      <!-- service cards -->
-      <div class="services-grid parallax p3">
-        <div class="service-card">
-          <h3>Web Development</h3>
-          <p>Modern, fast, and scalable websites built with clean code.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Mobile Applications</h3>
-          <p>High-performance Android &amp; iOS apps tailored for your business.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>UI / UX Design</h3>
-          <p>Pixel-perfect interfaces focused on usability and conversions.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Cloud &amp; DevOps</h3>
-          <p>Secure, scalable infrastructure and deployment automation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- work section -->
-  <section class="work-section section reveal" id="work">
-    <div class="container work-wrap">
-      <h2 class="section-title parallax p1">Our Work</h2>
-
-      <p class="section-subtitle parallax p2">
-        A glimpse of projects where strategy, design, and technology come together to deliver real impact.
-      </p>
-
-      <div class="work-grid parallax p3">
-        <!-- card 1 -->
-        <div class="work-card" tabindex="0" data-title="Enterprise Website" data-tags="UI / UX • Development"
-          data-desc="A modern enterprise website focused on performance, accessibility and clean design."
-          data-stack="HTML • CSS • JavaScript" data-img="Mindsolve_logo.jpeg">
-          <img src="Mindsolve_logo.jpeg" alt="Enterprise Website" class="work-img" />
-          <div class="work-overlay">
-            <h3>Enterprise Website</h3>
-            <p>UI / UX • Development</p>
-            <button class="work-btn" type="button">View Project →</button>
-          </div>
-        </div>
-
-        <!-- card 2 -->
-        <div class="work-card" tabindex="0" data-title="Product Landing Page" data-tags="Branding • Web"
-          data-desc="A conversion-focused landing page with clear messaging and strong visual hierarchy."
-          data-stack="HTML • CSS" data-img="Mindsolve_logo.jpeg">
-          <img src="Mindsolve_logo.jpeg" alt="Product Landing Page" class="work-img" />
-          <div class="work-overlay">
-            <h3>Product Landing Page</h3>
-            <p>Branding • Web</p>
-            <button class="work-btn" type="button">View Project →</button>
-          </div>
-        </div>
-
-        <!-- card 3 -->
-        <div class="work-card" tabindex="0" data-title="Mobile App UI" data-tags="UI / UX • iOS / Android"
-          data-desc="A clean mobile UI system with reusable components and smooth user journeys."
-          data-stack="Figma • Design System" data-img="Mindsolve_logo.jpeg">
-          <img src="Mindsolve_logo.jpeg" alt="Mobile App UI" class="work-img" />
-          <div class="work-overlay">
-            <h3>Mobile App UI</h3>
-            <p>UI / UX • iOS / Android</p>
-            <button class="work-btn" type="button">View Project →</button>
-          </div>
-        </div>
-
-        <!-- card 4 -->
-        <div class="work-card" tabindex="0" data-title="Cloud Dashboard" data-tags="DevOps • Analytics"
-          data-desc="A dashboard showing KPIs, alerts and monitoring status in a clean layout."
-          data-stack="Cloud • DevOps • Analytics" data-img="Mindsolve_logo.jpeg">
-          <img src="Mindsolve_logo.jpeg" alt="Cloud Dashboard" class="work-img" />
-          <div class="work-overlay">
-            <h3>Cloud Dashboard</h3>
-            <p>DevOps • Analytics</p>
-            <button class="work-btn" type="button">View Project →</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- testimonials section -->
-  <section class="testimonials-section section reveal" id="testimonials">
-    <div class="container testimonials-wrap">
-      <h2 class="section-title parallax p1">What Our Clients Say</h2>
-
-      <p class="testimonials-subtitle parallax p2">
-        Trusted by businesses for delivering reliable, scalable, and high-quality digital solutions.
-      </p>
-
-      <!-- on desktop this acts like grid, on mobile this becomes a slider -->
-      <div class="testimonials-carousel parallax p3">
-        <div class="testimonials-grid" id="testimonialsTrack">
-          <!-- card 1 -->
-          <div class="testimonial-card">
-            <p class="testimonial-quote">
-              Minds Solvit delivered exactly what we needed — clean design, scalable architecture, and
-              excellent support.
-            </p>
-
-            <div class="testimonial-person">
-              <div class="testimonial-name">Rajesh Kumar</div>
-              <div class="testimonial-role">Founder, Tech Startup</div>
-            </div>
-          </div>
-
-          <!-- card 2 -->
-          <div class="testimonial-card">
-            <p class="testimonial-quote">
-              Professional team with deep technical expertise. Our website performance improved drastically.
-            </p>
-
-            <div class="testimonial-person">
-              <div class="testimonial-name">Anita Sharma</div>
-              <div class="testimonial-role">Marketing Head</div>
-            </div>
-          </div>
-
-          <!-- card 3 -->
-          <div class="testimonial-card">
-            <p class="testimonial-quote">
-              From UI/UX to deployment, everything was smooth and well planned. Highly recommended.
-            </p>
-
-            <div class="testimonial-person">
-              <div class="testimonial-name">Vikram Reddy</div>
-              <div class="testimonial-role">Operations Manager</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- dots only matter on mobile -->
-        <div class="testimonials-dots" id="testimonialsDots" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- contact section -->
-  <section class="contact-section section reveal" id="contact">
-    <div class="container contact-wrap">
-      <h2 class="section-title parallax p1">Let’s Work Together</h2>
-
-      <p class="contact-subtitle parallax p2">
-        Have a project in mind or need expert guidance? Tell us about your requirements and we’ll get
-        back to you.
-      </p>
-
-      <div class="contact-grid parallax p3">
-        <!-- left side info -->
-        <div class="contact-info">
-          <h3 class="contact-heading">Get in Touch</h3>
-          <p class="contact-text">We’d love to hear about your project.</p>
-
-          <div class="contact-lines">
-            <p><strong>Email:</strong> contact@mindssolvit.com</p>
-            <p><strong>Phone:</strong> +91 9XXXXXXXXX</p>
-            <p><strong>Location:</strong> India</p>
-          </div>
-        </div>
-
-        <!-- right side form -->
-        <div class="contact-form-card">
-          <form class="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <input type="text" placeholder="Subject" required />
-            <textarea placeholder="Your Message" rows="6" required></textarea>
-
-            <button type="submit" class="contact-btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- footer -->
-  <footer class="footer" id="footer">
-    <p>
-      © 2026 Minds Solvit Pvt Ltd. All rights reserved. Designed &amp; Developed by
-      SharaTechnovate
-    </p>
-  </footer>
-
-  <!-- modal (for work section) -->
-  <div class="modal-backdrop" id="projectModal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" type="button" aria-label="Close modal">
-        ✕
+      <!-- hamburger for mobile -->
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
-      <div class="modal-media">
-        <img id="modalImg" alt="Project preview" />
+      <!-- mobile menu -->
+      <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <div class="mobile-nav-panel">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#work" class="nav-link">Portfolio</a>
+          <a href="#contact" class="nav-link nav-cta">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- hero split (IT + BT) -->
+    <section class="hero" id="home">
+      <!-- IT side -->
+      <div class="hero-it">
+        <div class="hero-content">
+          <h1>
+            <i class="fa-solid fa-laptop-code"></i>
+            Innovative IT Solutions
+          </h1>
+
+          <div class="slider" id="itSlider">
+            <p class="slide active">Secure, scalable digital systems.</p>
+            <p class="slide">Connecting ideas to the digital world.</p>
+            <p class="slide">Cloud-ready, future-proof solutions.</p>
+            <p class="slide">Security-first engineering &amp; support.</p>
+          </div>
+        </div>
+
+        <div class="hero-action">
+          <a href="it.html" class="btn btn-light">Explore IT</a>
+        </div>
       </div>
 
-      <div class="modal-content">
-        <h3 id="modalTitle"></h3>
-        <p class="modal-tags" id="modalTags"></p>
-        <p class="modal-desc" id="modalDesc"></p>
+      <!-- BT side -->
+      <div class="hero-bt">
+        <div class="hero-content">
+          <h1>
+            <i class="fa-solid fa-dna"></i>
+            Bio Technology
+          </h1>
 
-        <div class="modal-meta">
-          <span class="modal-pill" id="modalStack"></span>
+          <div class="slider" id="btSlider">
+            <p class="slide active">Technology aligned with sustainable strategy.</p>
+            <p class="slide">Traditional medicine backed by research.</p>
+            <p class="slide">Healthcare innovation for better outcomes.</p>
+            <p class="slide">Quality, safety &amp; scalable production.</p>
+          </div>
+        </div>
+
+        <div class="hero-action">
+          <a href="bt.html" class="btn btn-dark">Explore BT</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- bridge (small connector below hero) -->
+    <section class="bridge reveal" id="bridge">
+      <div class="container">
+        <h2 class="section-title parallax p1">One Partner. Two Strengths.</h2>
+        <p class="section-subtitle parallax p2">
+          We combine IT expertise with Bio Technology to deliver innovative, sustainable, and scalable
+          business value.
+        </p>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section class="about section reveal" id="about">
+      <div class="container">
+        <h2 class="section-title parallax p1">About Minds Solvit</h2>
+
+        <p class="about-text parallax p2">
+          We build modern, scalable, and business-driven digital solutions. Our focus is premium
+          design, performance, and long-term value.
+        </p>
+
+        <div class="stats parallax p3">
+          <div class="stat">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number" data-target="150">0</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number" data-target="100" data-suffix="%">0</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- services -->
+    <section class="services-section section reveal" id="services">
+      <div class="container services-wrap">
+        <h2 class="section-title parallax p1">Our Services</h2>
+
+        <p class="services-subtitle parallax p2">
+          We provide end-to-end digital solutions designed to scale your business with modern technology
+          and premium design.
+        </p>
+
+        <div class="services-grid parallax p3">
+          <div class="service-card">
+            <h3>Web Development</h3>
+            <p>Modern, fast, and scalable websites built with clean code.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Mobile Applications</h3>
+            <p>High-performance Android &amp; iOS apps tailored for your business.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>UI / UX Design</h3>
+            <p>Pixel-perfect interfaces focused on usability and conversions.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Cloud &amp; DevOps</h3>
+            <p>Secure, scalable infrastructure and deployment automation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- work -->
+    <section class="work-section section reveal" id="work">
+      <div class="container work-wrap">
+        <h2 class="section-title parallax p1">Our Work</h2>
+
+        <p class="section-subtitle parallax p2">
+          A glimpse of projects where strategy, design, and technology come together to deliver real impact.
+        </p>
+
+        <div class="work-grid parallax p3">
+          <div
+            class="work-card"
+            tabindex="0"
+            data-title="Enterprise Website"
+            data-tags="UI / UX • Development"
+            data-desc="A modern enterprise website focused on performance, accessibility and clean design."
+            data-stack="HTML • CSS • JavaScript"
+            data-img="Mindsolve_logo.jpeg"
+          >
+            <img src="Mindsolve_logo.jpeg" alt="Enterprise Website" class="work-img" />
+
+            <div class="work-overlay">
+              <h3>Enterprise Website</h3>
+              <p>UI / UX • Development</p>
+              <button class="work-btn" type="button">View Project →</button>
+            </div>
+          </div>
+
+          <div
+            class="work-card"
+            tabindex="0"
+            data-title="Product Landing Page"
+            data-tags="Branding • Web"
+            data-desc="A conversion-focused landing page with clear messaging and strong visual hierarchy."
+            data-stack="HTML • CSS"
+            data-img="Mindsolve_logo.jpeg"
+          >
+            <img src="Mindsolve_logo.jpeg" alt="Product Landing Page" class="work-img" />
+
+            <div class="work-overlay">
+              <h3>Product Landing Page</h3>
+              <p>Branding • Web</p>
+              <button class="work-btn" type="button">View Project →</button>
+            </div>
+          </div>
+
+          <div
+            class="work-card"
+            tabindex="0"
+            data-title="Mobile App UI"
+            data-tags="UI / UX • iOS / Android"
+            data-desc="A clean mobile UI system with reusable components and smooth user journeys."
+            data-stack="Figma • Design System"
+            data-img="Mindsolve_logo.jpeg"
+          >
+            <img src="Mindsolve_logo.jpeg" alt="Mobile App UI" class="work-img" />
+
+            <div class="work-overlay">
+              <h3>Mobile App UI</h3>
+              <p>UI / UX • iOS / Android</p>
+              <button class="work-btn" type="button">View Project →</button>
+            </div>
+          </div>
+
+          <div
+            class="work-card"
+            tabindex="0"
+            data-title="Cloud Dashboard"
+            data-tags="DevOps • Analytics"
+            data-desc="A dashboard showing KPIs, alerts and monitoring status in a clean layout."
+            data-stack="Cloud • DevOps • Analytics"
+            data-img="Mindsolve_logo.jpeg"
+          >
+            <img src="Mindsolve_logo.jpeg" alt="Cloud Dashboard" class="work-img" />
+
+            <div class="work-overlay">
+              <h3>Cloud Dashboard</h3>
+              <p>DevOps • Analytics</p>
+              <button class="work-btn" type="button">View Project →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonials -->
+    <section class="testimonials-section section reveal" id="testimonials">
+      <div class="container testimonials-wrap">
+        <h2 class="section-title parallax p1">What Our Clients Say</h2>
+
+        <p class="testimonials-subtitle parallax p2">
+          Trusted by businesses for delivering reliable, scalable, and high-quality digital solutions.
+        </p>
+
+        <div class="testimonials-carousel parallax p3">
+          <div class="testimonials-grid" id="testimonialsTrack">
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                Minds Solvit delivered exactly what we needed — clean design, scalable architecture, and
+                excellent support.
+              </p>
+              <div class="testimonial-person">
+                <div class="testimonial-name">Rajesh Kumar</div>
+                <div class="testimonial-role">Founder, Tech Startup</div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                Professional team with deep technical expertise. Our website performance improved drastically.
+              </p>
+              <div class="testimonial-person">
+                <div class="testimonial-name">Anita Sharma</div>
+                <div class="testimonial-role">Marketing Head</div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                From UI/UX to deployment, everything was smooth and well planned. Highly recommended.
+              </p>
+              <div class="testimonial-person">
+                <div class="testimonial-name">Vikram Reddy</div>
+                <div class="testimonial-role">Operations Manager</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials-dots" id="testimonialsDots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section class="contact-section section reveal" id="contact">
+      <div class="container contact-wrap">
+        <h2 class="section-title parallax p1">Let’s Work Together</h2>
+
+        <p class="contact-subtitle parallax p2">
+          Have a project in mind or need expert guidance? Tell us about your requirements and we’ll get
+          back to you.
+        </p>
+
+        <div class="contact-grid parallax p3">
+          <div class="contact-info">
+            <h3 class="contact-heading">Get in Touch</h3>
+            <p class="contact-text">We’d love to hear about your project.</p>
+
+            <div class="contact-lines">
+              <p><strong>Email:</strong> contact@mindssolvit.com</p>
+              <p><strong>Phone:</strong> +91 9XXXXXXXXX</p>
+              <p><strong>Location:</strong> India</p>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <form class="contact-form">
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <input type="text" placeholder="Subject" required />
+              <textarea placeholder="Your Message" rows="6" required></textarea>
+
+              <button type="submit" class="contact-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer" id="footer">
+      <p>
+        © 2026 Minds Solvit Pvt Ltd. All rights reserved. Designed &amp; Developed by SharaTechnovate
+      </p>
+    </footer>
+
+    <!-- modal (work section) -->
+    <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close modal">✕</button>
+
+        <div class="modal-media">
+          <img id="modalImg" alt="Project preview" />
+        </div>
+
+        <div class="modal-content">
+          <h3 id="modalTitle"></h3>
+          <p class="modal-tags" id="modalTags"></p>
+          <p class="modal-desc" id="modalDesc"></p>
+
+          <div class="modal-meta">
+            <span class="modal-pill" id="modalStack"></span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- theme toggle button -->
-  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" type="button">
-    <i class="fa-solid fa-moon"></i>
-  </button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" type="button">
+      <i class="fa-solid fa-moon"></i>
+    </button>
 
-  <!-- my js -->
-  <script src="script.js"></script>
-</body>
 
+    <!-- my js -->
+    <script src="script.js"></script>
+  </body>
 </html>

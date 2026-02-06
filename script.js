@@ -1,3 +1,89 @@
+// navbar shadow only when scrolling
+function initNavbarShadow() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) return;
+
+  function onScroll() {
+    if (window.scrollY > 8) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+// hamburger open/close + close on link click
+function initMobileNav() {
+  const toggle = document.getElementById("navToggle");
+  const mobileNav = document.getElementById("mobileNav");
+  if (!toggle || !mobileNav) return;
+
+  function openMenu() {
+    toggle.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+    mobileNav.classList.add("open");
+    mobileNav.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    toggle.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    mobileNav.classList.remove("open");
+    mobileNav.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = mobileNav.classList.contains("open");
+    if (isOpen) closeMenu();
+    else openMenu();
+  });
+
+  // clicking the dark backdrop closes it
+  mobileNav.addEventListener("click", (e) => {
+    if (e.target === mobileNav) closeMenu();
+  });
+
+  // clicking a link closes it
+  mobileNav.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // ESC closes it
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileNav.classList.contains("open")) closeMenu();
+  });
+}
+
+// highlight current section in navbar while scrolling
+function initActiveNav() {
+  const links = document.querySelectorAll(".nav-links .nav-link");
+  if (!links.length) return;
+
+  const sections = Array.from(links)
+    .map((a) => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        links.forEach((a) => a.classList.remove("active"));
+        const id = `#${entry.target.id}`;
+        const active = document.querySelector(`.nav-links .nav-link[href="${id}"]`);
+        active?.classList.add("active");
+      });
+    },
+    { threshold: 0.55 }
+  );
+
+  sections.forEach((sec) => obs.observe(sec));
+}
+
 // -----------------------------
 // slider (changes text every 4s)
 // -----------------------------
@@ -365,20 +451,31 @@ function initThemeToggle() {
 }
 
 // run everything after the page loads
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {    
+  // theme MUST be first
   initThemeToggle();
+
+  // navbar
+  initNavbarShadow();
+  initMobileNav();
+  initActiveNav();
+
+  // sliders
   initSlider("itSlider");
   initSlider("btSlider");
 
+  // animations
   initRevealOnScroll();
   initCounterOnView();
   initAboutParallax();
 
+  // work + testimonials
   initWorkCardsAndModal();
   initTestimonialsCarousel();
+
+  // biotech page only
   initBiotech();
 });
-
 
 /* ---------------------------------------------------- */
 /*                  BIOTECH PAGE LOGIC                  */
